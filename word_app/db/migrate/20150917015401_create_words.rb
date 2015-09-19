@@ -5,7 +5,7 @@ class CreateWords < ActiveRecord::Migration
       t.string :type
       t.text :definitions
       t.string :synonyms
-      t.string :sentence
+   
 
       t.timestamps null: false
     end

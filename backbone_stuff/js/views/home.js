@@ -1,6 +1,6 @@
 var Wordapp = Wordapp || { Models:{}, Collections:{}, Views:{}, Router:{} };
 
-WordApp.Views.Home = Backbone.View.extend({
+Wordapp.Views.Home = Backbone.View.extend({
 	initialize: function(options){},
 
 	render: function()
@@ -8,4 +8,6 @@ WordApp.Views.Home = Backbone.View.extend({
 		this.$el.html("Word.");
 		return this;
 	}
+
+
 });
