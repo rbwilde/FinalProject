@@ -2,6 +2,7 @@ var Wordapp = Wordapp || { Models:{}, Collections:{}, Views:{}, Router:{} };
 
 Wordapp.Views.WordView = Backbone.View.extend({
 	initialize: function(){
+	//ANNA - THIS IS SOMMETHING I WAS TRYING
 		consoel.log(this);
       _.bindAll(this, 'render');
       // create a collection
@@ -12,14 +13,15 @@ Wordapp.Views.WordView = Backbone.View.extend({
         success: function () {
             that.render();
         }
-      });
+     //ANNA - THIS IS WHAT I ORIGINALLY HAD HERE
 		// this.listenTo(this.collection, 'search', this.render);
 		// this.listenTo(this.model, 'save', this.save)
+      });
 	}
-	// tagName: 'div',
+	// tagName: 'div', //dont need this already a div
 	template: _.template( $('#word-search').html() ),
 	events: {
-		'click button' : 'getword'
+		'click search' : 'getword'
 		// 'click [data-action="save"]':'saveword'
 	},
 
