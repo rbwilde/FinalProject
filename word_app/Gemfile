@@ -29,6 +29,7 @@ gem 'devise', '~> 3.5.2'
 # Use Unicorn as the app server
 # gem 'unicorn'
 gem 'pry', '~> 0.10.1'
+gem 'mashape', '~> 2.0.9'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
