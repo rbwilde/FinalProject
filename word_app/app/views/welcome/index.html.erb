@@ -1,0 +1,36 @@
+<!doctype html>
+
+<html lang="en">  
+    <head>
+        <meta charset="UTF8">
+        <title>Word.</title>
+
+
+        <!-- <link href='css/main.css' rel='stylesheet' type='text/css'> -->
+    </head>
+    <body>
+    	<header id="container">
+            <h1><%= link_to "word.", root_path %></h1>
+    <nav>
+
+    </nav>
+
+    <div class="word-search">
+        <%= form_tag words_search_path, method: "get" do %>
+            <%= search_field_tag(:word, nil, placeholder: "WORD", ) %>
+            <input type="submit">
+        <% end %>
+    </div>
+    
+        </header>
+   
+
+<script type="text/template" id="word-template">
+        <div id="word">
+        <div id="word-paper">this is where the word goes</div>
+      </div>
+</script> 
+        </div>
+        <div id="main"></div>
+    </body>
+</html> 
