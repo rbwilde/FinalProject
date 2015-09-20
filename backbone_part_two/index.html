@@ -1,0 +1,38 @@
+<!doctype html>
+
+<html lang="en">  
+    <head>
+        <meta charset="UTF8">
+        <title>Backbonejs movie SPA</title>
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.2/backbone-min.js"></script>
+        <!-- <link href='css/main.css' rel='stylesheet' type='text/css'> -->
+    </head>
+    <body>
+        <div id="main-menu">
+            <h1>Word.</h1>
+        <div class="tools">
+<script type="text/template" id='search-template'>
+            <button data-action='search'>
+            Search:
+            </button>
+</script> 
+
+<script type="text/template" id="word-template">
+        <div id="word">
+        <div id="word-paper">this is where the word goes</div>
+      </div>
+</script> 
+        </div>
+        <div id="main"></div>
+
+        <script type="text/javascript" src="js/App.js"></script>
+        <script type="text/javascript" src="js/models/Word.js"></script>
+        <script type="text/javascript" src="js/collections/WordCollection.js"></script>
+        <script type="text/javascript" src="js/views/WordView.js"></script>
+        <script type="text/javascript" src="js/views/WordListView.js"></script>
+        <script type="text/javascript" src="js/views/Home.js"></script>
+        <script type="text/javascript" src="js/views/Search.js"></script>
+    </body>
+</html> 

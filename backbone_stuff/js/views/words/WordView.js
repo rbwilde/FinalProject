@@ -3,7 +3,7 @@ var Wordapp = Wordapp || { Models:{}, Collections:{}, Views:{}, Router:{} };
 Wordapp.Views.WordView = Backbone.View.extend({
 	initialize: function(){
 	//ANNA - THIS IS SOMMETHING I WAS TRYING
-		consoel.log(this);
+		console.log(this);
       _.bindAll(this, 'render');
       // create a collection
       this.collection = new Word;
