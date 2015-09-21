@@ -6,11 +6,9 @@ Wordapp.Views.WordView = Backbone.View.extend({
 	},
 	tagName: 'div',
 	template: _.template( $('#word-template').html() ),
+	inputTemplate: _.template($('#search-template').html()),
 	events: {
-		'click [data-action="destroy"]' : 'destroyPenguin',
-		'click [data-action="edit"]' : 'renderEditForm',
-		'mouseenter' : 'hoverOn',
-		'mouseleave' : 'hoverOff'
+		'click button' : 'getword'
 	},
 	render: function(){
 		this.$el.empty();
@@ -22,9 +20,17 @@ Wordapp.Views.WordView = Backbone.View.extend({
 		e.preventDefault();
 		this.model.destroy();
 	},
-	renderEditForm: function(){
+	getword: function(){
+		
+		var wordname = this.$el.find('#word-search').val();
+		var words = new Wordapp.Collections.Word({wordname:wordname})
+		words.fetch();
+		console.log(wordname);
+		// var body = response["results"]
+		// var def_body = body.map{|x| x.values[1] +'. '+ x.values[0]}
+	
 		var self = this;
-		this.$el.html(this.editTemplate( this.model.attributes ));
+		this.$el.html(this.inputTemplate( this.model.attributes ));
 
 		//Event listeners for the form and cancel button
 		this.$el.find('form').on("submit", function(e){

@@ -1,5 +1,5 @@
 require'json'
-require'uri'
+require 'uri'
 
 class WordsController < ApplicationController
 
@@ -15,25 +15,19 @@ class WordsController < ApplicationController
 	
 	def search_word
 		@word = current_user.words.build
-		word_search = params[:word]
+		@word_search = params[:word]
 		base = "https://wordsapiv1.p.mashape.com/words/"
-		query = URI.encode_www_form("query" => search_word)
-		mashape = base + query
-	binding.pry	
-		@response = HTTParty.get(mashape),
-  		headers:{
-   		"X-Mashape-Key" => ENV["WORD_API"],
-    	"Accept" => "application/json"
-  		}
-  		@body = response["results"]
-		@def_body = body.map! do |x|
-			word_attrs = {
-				part_of_speech: x.values[1], 
-				definition: x.values[0]
-			}	
-			Word.new(word_attrs)
-		end		
-		render :show
+		query = URI.encode_www_form("query" => @word_search)
+		mashape = base + @word_search
+
+		@response = HTTParty.get(mashape,
+  			headers:{
+   				"X-Mashape-Key" => ENV["WORD_API"],
+    			"Accept" => "application/json"
+  			})
+  		@body = @response["results"]	
+		@def_body = @body.map{|x| x.values[1] +'. '+ x.values[0]}
+			render :show
 	end
 
 	def edit

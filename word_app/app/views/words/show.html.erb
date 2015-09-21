@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Word.</title>
+</head>
+<body>
+	<div class="container">
+        	<div id="word-front">
+        		<div id="word-paper">
+        			<div id="word-target">
+        				<ul>
+						<h1 id="wordname"><%=@word_search%></h1>
+							<li><% @def_body.each do |y|%>
+							<%= y %></br></br>
+							<%end%>
+							</li>
+							
+        			</div>
+        			<div id="def-paper">
+        				<div id="def-target">
+        				</div>
+        			</div>
+        		</div>
+      		</div>
+	</div>
+</body>
+</html>
