@@ -14,7 +14,7 @@
         				<h1 class="list-title">my words</h1>
 
 						<%@words.each do |p|%>
-						<%= link_to p.word, user_words_search_path, method: :get%>
+						<%= link_to p.word, user_words_search_path + "?word=" + p.word, method: :get, word: "hi"%>
     
 						</br></br>
         				<%end%>

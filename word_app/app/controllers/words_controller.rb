@@ -16,7 +16,7 @@ class WordsController < ApplicationController
 
 	def user_word
 		@word = current_user.words.build
-		@word_search =
+		@word_search = params[:word]
 		base = "https://wordsapiv1.p.mashape.com/words/"
 		query = URI.encode_www_form("query" => @word_search)
 		mashape = base + @word_search
@@ -26,7 +26,7 @@ class WordsController < ApplicationController
    				"X-Mashape-Key" => ENV["WORD_API"],
     			"Accept" => "application/json"
   			})
-  		@body = @response["results"]	
+  		@body = @response["results"]
 		@def_body = @body.map{|x| x.values[1] +'. '+ x.values[0]}
 			render :show
 	end
