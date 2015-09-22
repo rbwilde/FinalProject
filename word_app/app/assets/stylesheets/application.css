@@ -19,8 +19,14 @@ body {
 	font-family: 'Special Elite', cursive;
 	background-image: url(/assets/paper.png);
 }
+a:hover{
+	color: red;
+}
+a{
+	text-decoration: none;
+}
 a:visited {
-	color:(#000000)
+	color: black;
 }
 h1,h2,h3,h4,h5,nav,.word-search{
 	text-align: center;
@@ -30,8 +36,8 @@ h1,h2,h3,h4,h5,nav,.word-search{
 	color: black;
 	padding-bottom: 30px;
 }
-footer{
-	text-align: left;
+.go_home{
+	padding-left: 10px;
 }
 #container{
 	padding-top: 100px
@@ -52,6 +58,24 @@ footer{
     height: 700px;
     width: 529px;
     margin: 0 auto;
+    box-shadow: 12 12 12 12;
+}
+.card{
+	background-image: url(/assets/card.png);
+	margin: 0 auto;
+	height: 400px;
+    width: 257px;
+}
+.auth{
+	padding-top: 10px;
+	margin: 0 auto;
+	height: 390px;
+    width: 245px;
+}
+.field,.actions{
+	margin: 0 auto;
+	padding-top: 40px;
+	padding-left: 10px;
 }
 #word-target{
 	padding-top: 50px;
@@ -59,8 +83,17 @@ footer{
     width: 400px;
     margin: 0 auto;
 }
+.shadow{
+	margin: 0 auto;
+	height: 660px;
+    width: 514px;
+	-webkit-box-shadow: 34px 29px 59px -25px rgba(0,0,0,0.75);
+	-moz-box-shadow: 34px 29px 59px -25px rgba(0,0,0,0.75);
+	box-shadow: 34px 29px 59px -25px rgba(0,0,0,0.75);
+}
 img{
 	margin: 0 auto;
+
 }
 /*#word-paper{
 	text-align: center;
@@ -69,7 +102,24 @@ img{
 li{
 	padding-top: 20px;	
 	list-style-type: none;
-
 }
-
+#word_of_the_day{
+	margin: 0 auto;
+    width: 400px;
+    text-align: left;
+}
+.save{
+	color: red;
+	text-align: right;
+	text-decoration: none;
+	outline: none;
+}
+#word-list{
+	margin: 0 auto;
+	text-align: center;
+	padding-top: 100px;	
+}
+.list-title{
+margin-top: -30px;
+}
 

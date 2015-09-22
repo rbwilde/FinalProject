@@ -5,24 +5,32 @@
 	<title>Word.</title>
 </head>
 <body>
-	<div class="container">
-        	<div id="word-front">
-        		<div id="word-paper">
-        			<div id="word-target">
-        				<ul>
-						<h1 id="wordname"><%=@word_search%></h1>
-							<li><% @def_body.each do |y|%>
-							<%= y %></br></br>
-							<%end%>
-							</li>
-							
-        			</div>
-        			<div id="def-paper">
+<div class="go_home"><%= link_to "word.", root_path %></div>  
+    <div class="container">
+        <div class="shadow">
+            <div id="word-front">
+                <div id="word-paper">
+                    <div id="word-target">
+                        <ul>
+                        <h1 id="wordname"><%=@word_search%></h1>
+                            <li><% @def_body.each do |y|%>
+                            <%= y %></br></br>
+                            <%end%>
+                            </li>
+            <div class="save"><%= form_for @word,url: {action: "create"} do |f|%>
+                            <%= f.hidden_field :word, :value => @word_search %>
+                            <%= f.hidden_field :user_id, :value => current_user.id.to_s %>
+                            <%= f.submit "save word."%>
+                            <%end%>
+                        </div>  
+                    </div>
+                    <div id="def-paper">
         				<div id="def-target">
         				</div>
         			</div>
         		</div>
       		</div>
+        </div>
 	</div>
 </body>
 </html>

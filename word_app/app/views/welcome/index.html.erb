@@ -12,11 +12,12 @@
     	<header id="container">
             <h1 class="main_title"><%= link_to "word.", root_path %></h1>
     <nav>
-        <% if session[:user_id] %>
-            <%= link_to "my words", word_path(session[:user_id]) %> | 
-            <%= link_to "log out", sessions_path, method: :delete %>
+        <% if user_signed_in? %>
+            <%= link_to "my words", user_words_path(current_user) %> | 
+            <%= link_to "log out", destroy_user_session_path, method: :delete %>
         <% else %>
-            <%= link_to "log in", 'users/sign_in' %>
+            <%= link_to "log in", new_user_session_path %> |
+            <%= link_to "sign up", new_user_registration_path %>
         <% end %>
     </nav></br></br></br>
 
@@ -28,18 +29,13 @@
     </div>
     
         </header>
-   <script type="text/template" id="word-template">
-        <div id="word">
-        <div id="word-paper">this is where the word goes</div>
-      </div>
-</script> 
         </div></br></br></br></br>
-        <footer id="word_of_the_day">
+        <div id="word_of_the_day">
                 <h2 class="random_word">traversing</h2>
                 <h4>v. Present participle of traverse.</h4>
                 <h4>adj. Adjustable laterally; having a lateral motion, or a swinging motion; adapted for giving lateral motion.</h4>
                 <h4>n. The motion of the cutting tool in a machine: strictly, it denotes the motion across the work, but is popularly extended to mean the same as ‘travel’ (of the tool or its carriage). Originally, it was the horizontal angular motion of a gun-carriage.</h4>
-        </footer>
+        </div>
 
     </body>
 </html> 
