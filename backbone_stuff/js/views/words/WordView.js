@@ -1,5 +1,7 @@
 var Wordapp = Wordapp || { Models:{}, Collections:{}, Views:{}, Router:{} };
 
+
+ Wordapp.singleword = Backbone.View.extend
 Wordapp.Views.WordView = Backbone.View.extend({
 	initialize: function(){
 	//ANNA - THIS IS SOMMETHING I WAS TRYING
